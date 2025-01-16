@@ -9,3 +9,7 @@ node_modules/
 npm-debug.log
 *.log.*
 npm_dependencies_report.*.md
+
+.nx
+vite.config.*.timestamp*
+vitest.config.*.timestamp*

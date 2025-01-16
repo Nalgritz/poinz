@@ -1,0 +1,66 @@
+{
+  "targetDefaults": {
+    "ft": {
+      "cache": true
+    },
+    "format": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"]
+    },
+    "build:dockerImage": {
+      "cache": true
+    },
+    "dependencyCheck": {
+      "cache": true
+    },
+    "docu": {
+      "cache": true
+    },
+    "docu:diagrams": {
+      "cache": true
+    },
+    "@nx/vite:test": {
+      "cache": true,
+      "inputs": ["default", "^default"]
+    },
+    "@nx/vite:build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
+    },
+    "@nx/eslint:lint": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore",
+        "{workspaceRoot}/eslint.config.cjs"
+      ]
+    }
+  },
+  "useInferencePlugins": false,
+  "defaultBase": "master",
+  "generators": {
+    "@nx/react": {
+      "application": {
+        "babel": true,
+        "style": "tailwind",
+        "linter": "eslint",
+        "bundler": "vite"
+      },
+      "component": {
+        "style": "tailwind"
+      },
+      "library": {
+        "style": "tailwind",
+        "linter": "eslint"
+      }
+    }
+  }
+}
